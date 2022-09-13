@@ -18,6 +18,10 @@ nav span{
   align-items: center;
 }
 
+nav .arrow{
+  color:red
+}
+
 .write-tweet{
   font-family: 'Source Sans Pro';
 }
