@@ -1,0 +1,29 @@
+.new-tweet{
+  width: 100%;
+}
+
+.new-tweet div:last-child{
+  border-top: solid 3px black;
+  display: flex;
+  justify-content: space-between;
+  padding-top:20px;
+  font-family: 'Bungee';
+}
+.new-tweet div button{
+  background-color:#4056A1;
+  color: white;
+  border: none;
+}
+
+.new-tweet div:first-child{
+  padding-bottom: 20px;
+  border: none;
+}
+
+.new-tweet div textarea{
+  border: none;
+  color: black;
+  background-color: transparent;
+  outline: none;
+  width: auto ;
+}
