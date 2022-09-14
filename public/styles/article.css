@@ -1,9 +1,9 @@
 .tweet{
-  width: 95%;
+  width: 93%;
   border: solid 3px black;
   margin: 0 auto;
   margin-top: 50px;
-  height: 200px;
+  height: auto;
 }
 
 .tweet footer{
@@ -15,6 +15,7 @@
   padding: 15px 20px;
   width: 95%;
   margin: 0 auto;
+
 }
 .tweet footer span:last-child{
   color: #4056A1;
@@ -35,10 +36,18 @@
   width: 95%;
   margin: 0 auto;
   border-bottom: solid 3px black;
+
 }
 
-.profile-image{
+.pro-pic{
   padding-right: 10px;
+  height: 45px;
+  width: 60px;
+}
+.pro-pic-name{
+  display: inline-flex;
+  align-items: center;
+ 
 }
 
 .tweeter-handle{

@@ -1,5 +1,6 @@
 .new-tweet{
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .new-tweet div:last-child{
