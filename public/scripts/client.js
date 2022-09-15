@@ -1,32 +1,39 @@
 $(document).ready(function () {
-  
   const maxLengthError = ` <i class="fa-solid fa-triangle-exclamation"></i>&ensp;&ensp;Too Long, please respect our abitrary limit&ensp;&ensp;<i class="fa-solid fa-triangle-exclamation"></i>`;
-  const noLengthError = ` <i class="fa-solid fa-triangle-exclamation"></i>&ensp;&ensp; You cannot have an empty tweet &ensp;&ensp;<i class="fa-solid fa-triangle-exclamation"></i>`
+  const noLengthError = ` <i class="fa-solid fa-triangle-exclamation"></i>&ensp;&ensp; You cannot have an empty tweet &ensp;&ensp;<i class="fa-solid fa-triangle-exclamation"></i>`;
 
-  $(".error-message-container").hide(); 
+
+  $(".error-message-container").hide();
   $("#submit-tweet").submit(function (event) {
     event.preventDefault();
     if ($("#tweet-text").val().length > 140) {
       $("#tweet-text").val("");
-      $('.error-message').html(maxLengthError);
-      return  $(".error-message-container").show(); 
+      $(".error-message").html(maxLengthError);
+      return $(".error-message-container").show();
     }
 
     if (
       $("#tweet-text").val().length === 0 ||
       $("#tweet-text").val() === null
     ) {
-      $('.error-message').html(noLengthError);
-      return $(".error-message-container").show(); 
+      $(".error-message").html(noLengthError);
+      return $(".error-message-container").show();
     }
-   
+
     const url = "/tweets";
     const data = $(this).serialize();
     $.ajax({ type: "POST", url: url, data: data });
-   
+
+    $("#tweet-container").empty();
+
     loadTweets();
-   
   });
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const createTweetElement = function (obj) {
     return `<article class ='tweet'>
@@ -45,12 +52,12 @@ $(document).ready(function () {
           </span>
         </div>   
         <div>
-          <span class="tweet-content">${obj.content.text}</span>
+          <span class="tweet-content">${escape(obj.content.text)}</span>
         </div>
       </header>
       <footer>
         <span class="time-created">
-          
+         ${timeago.format(obj.created_at)}
         </span>
         <span>
           <span class="flag"> <i class="fa-solid fa-flag"></i> </span>
@@ -69,11 +76,10 @@ $(document).ready(function () {
   };
 
   const loadTweets = function () {
-    $("#tweet-text").val('');
+    $("#tweet-text").val("");
     $.ajax({ type: "GET", url: "/tweets" }).then((response) => {
       renderTweets(response);
     });
   };
-
   loadTweets();
 }); //END OF DOCUMENT READY

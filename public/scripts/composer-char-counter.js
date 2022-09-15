@@ -2,6 +2,9 @@ $(document).ready(function () {
   // --- our code goes here ---
 
   $("#tweet-text").on("input", function () {
+
+    $(".error-message-container").hide();
+
     let textLength = $("#tweet-text").val().length;
     let count = 140 - textLength;
     $(".counter").val(count);
@@ -12,23 +15,8 @@ $(document).ready(function () {
     }
   });
 
-  $(".tweet").hover(() => {
-    $(".tweet").css("b ", "5px 5px");
+  $("#btn").hover(function (e) {
+    $(this).css("border", e.type === "mouseenter" ? "3px rgb(13, 157, 205) solid" : "0px");
   });
 
-  $(".tweet").hover(function (e) {
-    $(this).css("box-shadow", e.type === "mouseenter" ? "3px 3px rgb(13, 157, 205)" : "0px 0px");
-  });
-
-  $(".flag").hover(function (e) {
-    $(this).css("color", e.type === "mouseenter" ? "green" : "#4056A1");
-  });
-
-  $(".retweet").hover(function (e) {
-    $(this).css("color", e.type === "mouseenter" ? "green" : "#4056A1");
-  });
-
-  $(".heart").hover(function (e) {
-    $(this).css("color", e.type === "mouseenter" ? "green" : "#4056A1");
-  });
 });

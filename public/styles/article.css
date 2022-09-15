@@ -17,7 +17,7 @@
   margin: 0 auto;
 
 }
-.tweet footer span:last-child{
+.flag, .retweet, .heart{
   color: #4056A1;
 }
 
@@ -36,7 +36,9 @@
   width: 95%;
   margin: 0 auto;
   border-bottom: solid 3px black;
-
+}
+.tweet:hover{
+  box-shadow: 3px 3px rgb(13, 157, 205);
 }
 
 .pro-pic{
@@ -61,4 +63,8 @@
 #tweet-container{
   display: flex;
   flex-direction: column-reverse;
+}
+
+.flag:hover, .retweet:hover, .heart:hover{
+  color: green;
 }
