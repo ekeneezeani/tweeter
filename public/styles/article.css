@@ -68,3 +68,7 @@
 .flag:hover, .retweet:hover, .heart:hover{
   color: green;
 }
+
+#tweet-container{
+  font-family:  'Source Sans Pro';
+}

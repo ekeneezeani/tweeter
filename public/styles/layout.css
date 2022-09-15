@@ -19,14 +19,33 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro';
-
 }
 
 main{
   width: 90%;
-  margin: 0 auto;
 }
 
+.first-name{
+  font-weight: bold;
+}
+
+
+@media only screen and (min-width: 768px){
+
+}
+@media only screen and (min-width: 1024px){
+  body{
+    display: flex;
+    flex-direction: row;
+    flex: 2 45%;
+    flex: 3 65%;
+    
+  }
+  main{
+    margin-top: 195px;
+    margin-left: 75px;
+  }
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

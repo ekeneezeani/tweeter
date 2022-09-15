@@ -28,8 +28,8 @@
     <!-- App JS -->
     <script src="./scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
-  
-
+   <!-- Disables Viewport Zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   </head>
 
   <body>
@@ -48,7 +48,7 @@
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+          <span class="first-name">Ekene </span>Ezeani
       </div>
   </header>
 
@@ -63,16 +63,17 @@
           <div>
             <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           </div>
-          <div>
+          <div class="submit-counter">
             <button type="submit" id="btn">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-      </section>
-      
+              
         <section id="tweet-container">
           
         </section>
+      </section>
+
     </main>
   </body>
 </html>

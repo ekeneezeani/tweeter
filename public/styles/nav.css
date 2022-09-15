@@ -25,3 +25,16 @@ nav .arrow{
 .write-tweet{
   font-family: 'Source Sans Pro';
 }
+
+@media only screen and (min-width: 768px){
+  nav{
+    background-color: #ffa500;
+    background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+  }
+}
+@media only screen and (min-width: 1024px){
+  nav{
+    background-color:#4056A1;
+    background-image: none;
+  }
+}
