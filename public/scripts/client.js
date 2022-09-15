@@ -1,4 +1,16 @@
+// const { post } = require("jquery");
+
+//const { type } = require("jquery");
+
 $(document).ready(function () {
+  $("#submit-tweet").submit(function (event) {
+    event.preventDefault();
+    const url = '/tweets';
+    const data = $(this).serialize();
+    $.ajax({type: 'POST', url: url, data: data});
+    
+    console.log(data);
+  });
 
   const tweetData = [
     {
@@ -24,7 +36,6 @@ $(document).ready(function () {
       created_at: 1461113959088,
     },
   ];
-
 
   const createTweetElement = function (obj) {
     return `<article class ='tweet'>
@@ -59,15 +70,12 @@ $(document).ready(function () {
     </article>`;
   };
 
-
   const renderTweets = function (tweets) {
     for (const tweet of tweets) {
       const newTweetArticle = createTweetElement(tweet);
       $("#tweet-container").append(newTweetArticle);
-      console.log(tweet)
     }
   };
 
   renderTweets(tweetData);
-
-});//END OF DOCUMENT READY
+}); //END OF DOCUMENT READY
