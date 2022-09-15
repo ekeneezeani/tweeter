@@ -1,15 +1,21 @@
-// const { post } = require("jquery");
-
-//const { type } = require("jquery");
-
 $(document).ready(function () {
   $("#submit-tweet").submit(function (event) {
     event.preventDefault();
-    const url = '/tweets';
+    if ($("#tweet-text").val().length > 140) {
+      $("#tweet-text").val("");
+      return alert("Input is over rquired number of text");
+    }
+
+    if (
+      $("#tweet-text").val().length === 0 ||
+      $("#tweet-text").val() === null
+    ) {
+      return alert("Input cannot be an empty text");
+    }
+
+    const url = "/tweets";
     const data = $(this).serialize();
-    $.ajax({type: 'POST', url: url, data: data});
-    
-    console.log(data);
+    $.ajax({ type: "POST", url: url, data: data });
   });
 
   const tweetData = [
@@ -38,6 +44,8 @@ $(document).ready(function () {
   ];
 
   const createTweetElement = function (obj) {
+    // const date = new Date(obj.created_at);
+
     return `<article class ='tweet'>
       <header> 
         <div>  
@@ -59,7 +67,7 @@ $(document).ready(function () {
       </header>
       <footer>
         <span class="time-created">
-            ${obj.created_at}
+          <time datetime="2016-06-30 09:20:00"></time>
         </span>
         <span>
           <span class="flag"> <i class="fa-solid fa-flag"></i> </span>
@@ -77,5 +85,11 @@ $(document).ready(function () {
     }
   };
 
-  renderTweets(tweetData);
+  const loadTweets = function () {
+    $.ajax({ type: "GET", url: "/tweets" }).then((response) => {
+      renderTweets(response);
+    });
+  };
+
+  loadTweets();
 }); //END OF DOCUMENT READY
