@@ -58,3 +58,7 @@
 .flag, .retweet{
   padding-right: 7px;
 }
+#tweet-container{
+  display: flex;
+  flex-direction: column-reverse;
+}
