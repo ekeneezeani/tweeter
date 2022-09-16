@@ -6,6 +6,7 @@ $(document).ready(function () {
   // Hides Error message when the site loads
   $(".error-message-container").hide();
 
+  
   $("#submit-tweet").submit(function (event) {
     event.preventDefault();
     // Validation of character count
@@ -31,11 +32,13 @@ $(document).ready(function () {
     const data = $(this).serialize();
 
     // AJAX post
-    $.ajax({ type: "POST", url: url, data: data });
-    $(".counter").html(140);
-    loadTweets();
-    // Reload the page after each submission
-    location.reload(true);
+    $.post({url: url, data: data }).then(()=>{
+      loadTweets();
+      $(".counter").html(140);
+      // Reload the page after each submission
+      // location.reload(true);
+    });
+
   });
 
   // Function to check Cross Site Scripting
@@ -62,7 +65,7 @@ $(document).ready(function () {
             <span class="tweeter-handle">${obj.user.handle}</span>
           </span>
         </div>   
-        <div>
+        <div class="content-header">
           <span class="tweet-content">${escape(obj.content.text)}</span>
         </div>
       </header>
@@ -83,16 +86,17 @@ $(document).ready(function () {
   const renderTweets = function (tweets) {
     for (const tweet of tweets) {
       const newTweetArticle = createTweetElement(tweet);
-      $("#tweet-container").append(newTweetArticle);
+      $("#tweet-container").prepend(newTweetArticle);
     }
   };
 
   // Get request
   const loadTweets = function () {
     $("#tweet-text").val("");
-    $.ajax({ type: "GET", url: "/tweets" }).then((response) => {
+    $.get({ url: "/tweets" }).then((response) => {
       renderTweets(response);
     });
   };
+  
   loadTweets();
 }); //END OF DOCUMENT READY

@@ -3,7 +3,6 @@
   border: solid 3px black;
   margin: 0 auto;
   margin-top: 50px;
-  height: auto;
   word-wrap: break-word;
 }
 
@@ -29,9 +28,9 @@
   padding: 20px 20px;
 }
 
-.tweet header div:last-child{
+.content-header{
   padding: 25px 20px;
-
+  
 }
 .tweet header{
   width: 95%;
@@ -63,8 +62,7 @@
 }
 #tweet-container{
   display: flex;
-  flex-direction: column-reverse;
-  
+  flex-direction: column;
 }
 
 .flag:hover, .retweet:hover, .heart:hover{

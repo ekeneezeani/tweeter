@@ -22,14 +22,14 @@ body {
 }
 
 main{
-  width: 90%;
+  /* width: 90%; */
 }
 
 @media only screen and (min-width: 1024px){
   body{
     display: flex;
     flex-direction: row;
-    flex: 2 45%;
+    flex: 2 35%;
     flex: 3 65%;
     
   }
