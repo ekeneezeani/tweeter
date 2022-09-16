@@ -15,8 +15,4 @@ $(document).ready(function () {
     }
   });
 
-  $("#btn").hover(function (e) {
-    $(this).css("border", e.type === "mouseenter" ? "3px rgb(13, 157, 205) solid" : "0px");
-  });
-
 });

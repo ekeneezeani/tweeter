@@ -6,9 +6,11 @@ $(document).ready(function () {
   $(".error-message-container").hide();
   $("#submit-tweet").submit(function (event) {
     event.preventDefault();
+
     if ($("#tweet-text").val().length > 140) {
       $("#tweet-text").val("");
       $(".error-message").html(maxLengthError);
+      $(".counter").html(140).css("color","#545149")
       return $(".error-message-container").show();
     }
 
@@ -25,6 +27,7 @@ $(document).ready(function () {
     $.ajax({ type: "POST", url: url, data: data });
 
     $("#tweet-container").empty();
+    $(".counter").html(140);
 
     loadTweets();
   });

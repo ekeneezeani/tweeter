@@ -42,6 +42,22 @@
   padding: 5px;
 }
 
+#btn:hover{
+  border: 1px solid blueviolet;
+  margin: -1px;
+}
+
 #submit-tweet{
   margin-top: 35px;
+  width: 95%;
+  margin-left:  auto;
+  margin-right:  auto;
+}
+
+@media only screen and (max-width: 548px){
+
+  .error-message-container .error-message{
+    font-size: small;
+  }
+  
 }

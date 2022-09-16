@@ -13,17 +13,28 @@ nav{
 }
 
 nav span{
+  align-items: right ;
+}
+
+nav .arrow{
+  color:red;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-nav .arrow{
-  color:red
-}
-
 .write-tweet{
   font-family: 'Source Sans Pro';
+}
+
+.write-tweet .bolden-write{
+  font-weight: bold;
+}
+@media only screen and (min-width: 300px){
+  nav{
+    background-color: #ffa500;
+    background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+  }
 }
 
 @media only screen and (min-width: 768px){
