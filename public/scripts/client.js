@@ -1,16 +1,16 @@
-$(document).ready(function () {
+$(document).ready(function() {
   const maxLengthError = ` <i class="fa-solid fa-triangle-exclamation"></i>&ensp;&ensp;Too Long, please respect our abitrary limit&ensp;&ensp;<i class="fa-solid fa-triangle-exclamation"></i>`;
   const noLengthError = ` <i class="fa-solid fa-triangle-exclamation"></i>&ensp;&ensp; You cannot have an empty tweet &ensp;&ensp;<i class="fa-solid fa-triangle-exclamation"></i>`;
 
 
   $(".error-message-container").hide();
-  $("#submit-tweet").submit(function (event) {
+  $("#submit-tweet").submit(function(event) {
     event.preventDefault();
 
     if ($("#tweet-text").val().length > 140) {
       $("#tweet-text").val("");
       $(".error-message").html(maxLengthError);
-      $(".counter").html(140).css("color","#545149")
+      $(".counter").html(140).css("color","#545149");
       return $(".error-message-container").show();
     }
 
@@ -32,13 +32,13 @@ $(document).ready(function () {
     loadTweets();
   });
 
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  const createTweetElement = function (obj) {
+  const createTweetElement = function(obj) {
     return `<article class ='tweet'>
       <header> 
         <div>  
@@ -71,14 +71,14 @@ $(document).ready(function () {
     </article>`;
   };
 
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const newTweetArticle = createTweetElement(tweet);
       $("#tweet-container").append(newTweetArticle);
     }
   };
 
-  const loadTweets = function () {
+  const loadTweets = function() {
     $("#tweet-text").val("");
     $.ajax({ type: "GET", url: "/tweets" }).then((response) => {
       renderTweets(response);

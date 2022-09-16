@@ -25,9 +25,6 @@ main{
   width: 90%;
 }
 
-@media only screen and (min-width: 768px){
-
-}
 @media only screen and (min-width: 1024px){
   body{
     display: flex;

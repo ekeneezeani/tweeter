@@ -13,7 +13,7 @@ Tweeter is a simple, single-page Twitter clone.
 
 !["Submits tweet and update page"](./public/docs/submits-tweets-updates-page.png)
 !["Validation Message"](./public/docs/validation-error-message.png)
-!["how it will look on an iPad"](./public/docs/IPAD%20compatible%20.png)
+!["how it will look on an iPad"](./public/docs/Screen%20Shot%202022-09-15%20at%207.30.48%20PM.png)
 !["on smaller screens"](./public/docs/on-smaller-screens.png)
 !["counts tweet characters"](./public/docs/counts-tweet-characters.png)
 !["Validation message when no tweet is submitted"](./public/docs/validation-error-message2.png)

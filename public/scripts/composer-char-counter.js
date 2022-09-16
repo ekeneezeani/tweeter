@@ -1,7 +1,6 @@
-$(document).ready(function () {
-  // --- our code goes here ---
-
-  $("#tweet-text").on("input", function () {
+$(document).ready(function() {
+  
+  $("#tweet-text").on("input", function() {
 
     $(".error-message-container").hide();
 
