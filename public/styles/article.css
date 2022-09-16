@@ -4,6 +4,7 @@
   margin: 0 auto;
   margin-top: 50px;
   height: auto;
+  word-wrap: break-word;
 }
 
 .tweet footer{
@@ -63,6 +64,7 @@
 #tweet-container{
   display: flex;
   flex-direction: column-reverse;
+  
 }
 
 .flag:hover, .retweet:hover, .heart:hover{
